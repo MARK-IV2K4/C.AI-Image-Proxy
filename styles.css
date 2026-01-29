@@ -1,0 +1,25 @@
+/* Styles for the image proxy extension */
+
+/* Add a subtle indicator for images that can be proxied */
+img[data-proxy-processed="true"] {
+  position: relative;
+}
+
+/* Optional: Add a small overlay indicator */
+img[data-proxy-processed="true"]:hover::after {
+  content: "🔄";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 10px;
+  pointer-events: none;
+}
+
+/* Smooth transition for image replacements */
+img[data-proxy-processed="true"] {
+  transition: opacity 0.3s ease;
+}

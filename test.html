@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extension Test Page</title>
+</head>
+<body>
+    <h1>Test Character AI Image Proxy Extension</h1>
+    
+    <div style="margin: 20px;">
+        <h3>Test Avatar Images:</h3>
+        
+        <!-- Simulate Character AI avatar images -->
+        <div class="character-avatar" style="margin: 10px; display: inline-block;">
+            <img src="https://via.placeholder.com/100x100/FF0000/FFFFFF?text=Bot1" 
+                 alt="character avatar" 
+                 style="width: 100px; height: 100px; border: 2px solid #ccc;">
+            <p>Bot 1 Avatar</p>
+        </div>
+        
+        <div class="character-avatar" style="margin: 10px; display: inline-block;">
+            <img src="https://via.placeholder.com/100x100/00FF00/FFFFFF?text=Bot2" 
+                 alt="character avatar" 
+                 style="width: 100px; height: 100px; border: 2px solid #ccc;">
+            <p>Bot 2 Avatar</p>
+        </div>
+        
+        <div class="character-avatar" style="margin: 10px; display: inline-block;">
+            <img src="https://via.placeholder.com/100x100/0000FF/FFFFFF?text=Bot3" 
+                 alt="character avatar" 
+                 style="width: 100px; height: 100px; border: 2px solid #ccc;">
+            <p>Bot 3 Avatar</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px; padding: 15px; background: #f0f0f0; border-radius: 5px;">
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Right-click on any avatar image above</li>
+            <li>Enter a direct image URL (try: <code>https://picsum.photos/100/100</code>)</li>
+            <li>The image should be replaced</li>
+        </ol>
+        
+        <h4>Good test URLs:</h4>
+        <ul>
+            <li><code>https://picsum.photos/100/100</code> - Random image</li>
+            <li><code>https://via.placeholder.com/100x100/FF69B4/FFFFFF?text=TEST</code> - Pink placeholder</li>
+            <li><code>https://httpbin.org/image/jpeg</code> - Test JPEG</li>
+        </ul>
+    </div>
+    
+    <script>
+        // Add some dynamic images to test the MutationObserver
+        setTimeout(() => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <div class="character-avatar" style="margin: 10px; display: inline-block;">
+                    <img src="https://via.placeholder.com/100x100/FFFF00/000000?text=Dynamic" 
+                         alt="character avatar" 
+                         style="width: 100px; height: 100px; border: 2px solid #ccc;">
+                    <p>Dynamic Avatar (loaded after 2s)</p>
+                </div>
+            `;
+            document.body.appendChild(div);
+        }, 2000);
+    </script>
+</body>
+</html>

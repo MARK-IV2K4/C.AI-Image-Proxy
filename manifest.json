@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Character AI Image Proxy",
+  "version": "1.0",
+  "description": "Personal extension to replace bot display images on Character AI",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://character.ai/*",
+    "https://beta.character.ai/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://character.ai/*",
+        "https://beta.character.ai/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Image Proxy Settings"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*"],
+      "matches": ["https://character.ai/*", "https://beta.character.ai/*"]
+    }
+  ]
+}
