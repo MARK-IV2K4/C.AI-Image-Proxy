@@ -51,12 +51,4 @@ If images aren't being detected:
 1. Check the browser console for errors
 2. Verify the CSS selectors in `content.js` match Character AI's current structure
 3. Ensure the extension has proper permissions
-
-## Learning Objectives
-
-This extension demonstrates:
-- Content script injection
-- DOM manipulation and observation
-- Chrome extension APIs
-- Local storage management
-- Event handling and user interaction
+   
